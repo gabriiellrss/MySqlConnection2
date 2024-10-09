@@ -15,12 +15,11 @@ namespace LEGAL2
         {
             MySqlConnection conexao;
             MySqlConnection cmd;
-
             conexao = new MySqlConnection();
 
             try
             {
-                string stringconexao = "server=127.0.0.1;uid=root;pwd='123';database=TESTE";
+                string stringconexao = "server=localhost;uid=root;pwd='';database=TESTE";
                 conexao.ConnectionString = stringconexao;
                 conexao.Open();
                 Console.WriteLine("conexão estabelecida");
@@ -38,15 +37,11 @@ namespace LEGAL2
                 Console.ReadKey();
 
             }
-            string sql = "select * from usuario;";
-            cmd = new MySqlCommand(sql, conexao);
-            MySqlDataReader reader = cmd.ExecuteReader();
 
-            while (reader.Read())
-            {
-                Console.WriteLine("id:" + reader["id"];
+            string sql = "select * from usuario";
 
-            }
+
+
         }
     }
 }
